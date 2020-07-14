@@ -1,14 +1,22 @@
 
 
 $(document).ready(function(){
-	// $("#create").click(function(){
 
-		//current month
-		var currentMonth=moment().get('month');
-		var currentYear=moment().get('year');
+	var y;
+	var m;
 
-		var y=currentYear;
-		var m=currentMonth;
+	if (localStorage.getItem("month") != null){
+		m=parseInt(localStorage.getItem("month"));
+		y=parseInt(localStorage.getItem("year"));
+		localStorage.clear();
+	} else {
+		m=moment().get('month');
+		y=moment().get('year');
+	}
+
+
+
+
 
 		$("#timesheetPeriod").text(moment(new Date(y,m)).format("YYYY MMMM"));
 
