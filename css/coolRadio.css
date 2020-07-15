@@ -2,10 +2,37 @@
 
 
 
-
-.well{
-    background-color: bisque;
+.row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+  flex-wrap: wrap;
 }
+.row > [class*='col-'] {
+  display: flex;
+  flex-direction: column;
+}
+
+.page-footer{
+background-color: LightGray;
+text-align: center;
+;
+}
+
+.shifts{
+  background-color: rgba(161, 161, 161, 0.19);
+}
+
+.options{
+  background-color: navy;
+}
+
+.options h3{
+    color: LightGray;
+}
+
+
 
 .dayDiv:hover{
     background-color: #B8D0D5  ;
@@ -20,7 +47,7 @@
     vertical-align: middle;
     height: 30px;
     margin: 0;
-     
+
 }
 
 input[type="radio"]{
@@ -42,7 +69,7 @@ input[type="radio"]{
      width: 30px;
      border: 0;
      border-radius: 50px; /* Radius makes the element a circle*/
-     cursor: pointer;     
+     cursor: pointer;
      margin-right: 7px;
      outline: none;
      outline: none !important;    /*gets rid of outline around the actively checked radiobutton*/
@@ -75,7 +102,7 @@ label
      -webkit-font-smoothing: antialiased;
      -moz-osx-font-smoothing: grayscale;
      cursor: pointer;
-} 
+}
 
 input[value="0"]{
     opacity: 0;

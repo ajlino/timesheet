@@ -26,7 +26,7 @@ else{
             echo "New record created successfully";
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-        } 
+        }
 
 }
 
@@ -36,11 +36,11 @@ for ($i=1; $i<32; $i++){
     $day='day'.$i;
     $rb="radioButton_Day".$i;
     $value=$_POST[$rb];
-    
+
     if (is_null($value)){
         $value=0;
     }
-    
+
     $sql = "UPDATE timesheet2 SET $day=$value WHERE name='$name' AND yr='$year' AND mth='$month'";
     mysqli_query($conn,$sql);
 }
@@ -53,7 +53,7 @@ for ($i=1; $i<32; $i++){
 //    $day='day'.$x;
 //	$sql = "UPDATE timesheet2 SET $day=$value WHERE name='$name' AND yr='$year' AND mth='$month'";
 //    $x++;
-//    
+//
 //    //Here we "query" the data in the database
 //	mysqli_query($conn, $sql);
 //}
