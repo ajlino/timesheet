@@ -3,7 +3,6 @@
 
 include_once 'timesheetDBH.php';
 
-$x=0;
 $name=$_POST['name'];
 $year=$_POST['yr'];
 $month=$_POST['mth'];

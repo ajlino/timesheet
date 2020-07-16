@@ -1,17 +1,19 @@
+$(document).ready(function(){
+  $("#createReport").submit(function(event){
+    event.preventDefault();  //prevent default action (form submission to php)
+    var post_url=$(this).attr("action");  //get from action url
+    var request_method = $(this).attr("method"); //get form GET/POST method
+    var form_data = $(this).serialize();  //encode form elements for submission
+    console.log(form_data); //for debugging
 
-$("#createReport").submit(function(event)){
-  event.preventDefault();  //prevent default action (form submission to php)
-  var post_url=$(this).attr("action");  //get from action url
-  var form_data = ($this). serialize();  //encode form elements for submission
-
-  $.getJSON( post_url, form_data, function(response){
-      //iterate json response
-      $.each(response, function(key, val){
-          $("#server-results").append(val+"<br/>");  //append results to element
-
-      })
-  })
+    $.ajax({
+      url : post_url,
+      type: request_method,
+      data : form_data
+    }).done(function(response){ //
+  		$("#server-results").html(response);  //innerHTML for div id server-results
+      var jsonData = JSON.parse(response);
+      console.log(jsonData);
+  	});
+  });
 });
-
-
-    
