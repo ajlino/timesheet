@@ -31,7 +31,7 @@ $month=$_POST['mth'];
    while($row = mysqli_fetch_assoc($result)) {
      // echo "name: " . $row["name"]. " Year: " . $row["yr"]. " month" . $row["mth"]. "Day1".$row["day1"];
      foreach($row as $value){
-       echo $value." | ";
+       // echo $value." | ";
        //storing in array
        $data[]=$value;
      }

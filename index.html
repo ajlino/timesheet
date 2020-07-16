@@ -17,6 +17,7 @@
 <script src="js/timesheetCreate.js"></script>
 <script src="js/rbToggle.js"></script>
 <script src="js/getDateforNewSheet.js"></script>
+<script src="js/createReport.js"></script>
 
 
 
@@ -69,7 +70,7 @@
       <button type="button" id="create">Create</button>
       <br>
 
-      <form class="form" action="php/createReport.php" method="post">
+      <form class="form" action="php/createReport.php" method="post" id="createReport">
         <h3>Create Report</h3>
         <select name="name">
             <option value="Andy">Andy</option>
@@ -105,6 +106,7 @@
             <option value="2020" selected>2020</option>
         </select>
         <input type="Submit" id="submit">
+        <div id="server-results"> !--Ajax Response --></div>
       </form>
     </div>
 
