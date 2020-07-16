@@ -23,15 +23,20 @@ $month=$_POST['mth'];
   $sql = "SELECT *FROM timesheet2 WHERE name='$name' AND yr='$year' AND mth='$month'";
   $result = mysqli_query($conn, $sql);
 
+
+  $data = array();
+
   if (mysqli_num_rows($result) > 0) {
    // output data of each row
    while($row = mysqli_fetch_assoc($result)) {
      // echo "name: " . $row["name"]. " Year: " . $row["yr"]. " month" . $row["mth"]. "Day1".$row["day1"];
      foreach($row as $value){
        echo $value." | ";
+       //storing in array
+       $data[]=$value;
      }
-     echo "</br>";
-   }
+    echo json_encode($data);
+    }
  } else {
    echo "0 results";
    echo $name;
