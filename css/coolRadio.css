@@ -32,6 +32,10 @@ text-align: center;
     color: LightGray;
 }
 
+.report {
+  background-color: LightGray;
+}
+
 
 
 .dayDiv:hover{
