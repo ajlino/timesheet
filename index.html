@@ -18,6 +18,7 @@
 <script src="js/rbToggle.js"></script>
 <script src="js/getDateforNewSheet.js"></script>
 <script src="js/createReport.js"></script>
+<script src="js\timeSheetSubmitAjax.js"></script>
 
 
 
@@ -47,7 +48,7 @@
 
     <div class="col-sm-12 shifts">
         <!-- <h3 id="timesheetPeriod">"Timesheet"</h3> -->
-        <form class="form" action="php/timesheet.php" method="post">
+        <form class="form" action="php/timesheet.php" method="post" id="submitTimesheet">
           <div class="timesheetHeader">
             <select name="name">
                 <option value="Andy">Andy</option>
@@ -60,7 +61,7 @@
           </div>
           <div id="selectionDiv"></div>
           <div id="submitButton">
-              <input type="Submit">
+              <input  type="Submit">
           </div>
           <div id="tallyDisplay">
               <p id="totalHours" class="tally">Total Hours</p>

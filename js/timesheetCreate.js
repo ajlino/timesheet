@@ -20,7 +20,7 @@ $(document).ready(function(){
 		$("#year").val(y);
 		$("#month").val(m);
 
-		$("#timesheetPeriod").text(moment(new Date(y,m)).format("YYYY MMMM"));
+		// $("#timesheetPeriod").text(moment(new Date(y,m)).format("YYYY MMMM"));
 
 		// var y=$("#yr").val();
 		// var m=$("#mth").val();
