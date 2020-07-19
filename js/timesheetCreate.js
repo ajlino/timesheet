@@ -1,7 +1,7 @@
 
 
 $(document).ready(function(){
-
+	console.log("Hello boozoo");
 	var y;
 	var m;
 
@@ -17,8 +17,10 @@ $(document).ready(function(){
 
 
 
+		$("#year").val(y);
+		$("#month").val(m);
 
-		$("#timesheetPeriod").text(moment(new Date(y,m)).format("YYYY MMMM"));
+		// $("#timesheetPeriod").text(moment(new Date(y,m)).format("YYYY MMMM"));
 
 		// var y=$("#yr").val();
 		// var m=$("#mth").val();
@@ -52,13 +54,16 @@ $(document).ready(function(){
 	                rbChecked='checked="true"';
 	            }
 				//Note: button values will = xx
-	//			var ddd='<input type="radio" class="'+rbName+'" name="'+rbName+'" id="'+rbID+'" data-waschecked="false" value='+xx+' checked="'+rbChecked+'"></input>';
 	            var ddd='<input type="radio"  name="'+rbName+'" id="'+rbID+'" data-waschecked="false" value='+rbValue+' '+rbChecked+'" class="form-radio"></input>';
 	            var dddLabel='<label for="'+rbID+'" class="radio-group"></label>';
 
 				$("#"+divID).append(ddd);
 	            $("#"+divID).append(dddLabel);
 			}
+
+			//Create memo Text input
+			var createMemoBox ='<input type="text" name="memoDay'+x+'" class="memoText" id="memoDay'+x+'">';
+			$("#"+divID).append(createMemoBox);
 
 		}
 

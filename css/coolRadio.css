@@ -2,6 +2,15 @@
 
 
 
+.memoText{
+  /* display: inline-block;
+  position: relative; */
+  /* vertical-align: middle; */
+  /* height: 30px; */
+  margin-left: 30px;
+  width: 400px;
+}
+
 .row {
   display: -webkit-box;
   display: -webkit-flex;
@@ -67,11 +76,12 @@ input[type="radio"]{
      display: inline-block;
      position: relative;
 
-     background-color: #f1f1f1;  /*Circle color*/
+     background-color: white;  /*Circle color*/
      color: #ED7D00;  /*Check Mark color*/
      height: 30px;
      width: 30px;
-     border: 0;
+     /* border: solid 1px;
+     border-color: black; */
      border-radius: 50px; /* Radius makes the element a circle*/
      cursor: pointer;
      margin-right: 7px;
@@ -87,6 +97,7 @@ input[type="radio"]{
      top: 7px;
      content: '\02143';
      transform: rotate(40deg);
+     background-color: white;
 }
 .form-radio:hover
 {
@@ -94,7 +105,7 @@ input[type="radio"]{
 }
 .form-radio:checked
 {
-     background-color: #f1f1f1;
+     background-color: white;
 }
 
 

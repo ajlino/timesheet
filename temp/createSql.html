@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  </head>
+  <body>
+    <div id="demo"></div>
+
+    <script>
+      $(document).ready(function(){
+        for (var x=1; x<32; x++){
+          var memoDay="memoDay"+x+" varchar(256) ,";
+          console.log(memoDay);
+          $("#demo").append("<p>"+memoDay+"</p>");
+
+        }
+      });
+
+
+    </script>
+
+
+  </body>
+</html>
