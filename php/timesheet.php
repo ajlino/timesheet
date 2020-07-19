@@ -1,5 +1,6 @@
 <?php
 
+$tableName="timesheet3";
 
 include_once 'timesheetDBH.php';
 
@@ -11,9 +12,10 @@ $year=$_POST['yr'];
 $month=$_POST['mth'];
 
 
+
 //$sql="SELECT name FROM timesheet2 WHERE name='$name', yr='$year', mth='$month'";
 
-$sql="SELECT name FROM timesheet2 WHERE name='$name' AND yr='$year' AND mth='$month'";
+$sql="SELECT name FROM $tableName WHERE name='$name' AND yr='$year' AND mth='$month'";
 $result=mysqli_query($conn, $sql);
 echo mysqli_num_rows($result);
 
@@ -21,7 +23,7 @@ if (mysqli_num_rows($result)>0){
     $x=0;
 }
 else{
-    $sql = "INSERT INTO timesheet2 (name, yr, mth) VALUES ('$name', '$year', '$month')";
+    $sql = "INSERT INTO $tableName (name, yr, mth) VALUES ('$name', '$year', '$month')";
         if (mysqli_query($conn, $sql)) {
             echo "New record created successfully";
         } else {
@@ -35,23 +37,25 @@ else{
 for ($i=1; $i<32; $i++){
     $day='day'.$i;
     $rb="radioButton_Day".$i;
-    $value=$_POST[$rb];
+    $memo="memoDay".$i;
+    $rbValue=$_POST[$rb];
+    $memoValue=$_POST[$memo];
 
-    if (is_null($value)){
-        $value=0;
+    if (is_null($rbValue)){
+        $rbValue=0;
     }
 
-    $sql = "UPDATE timesheet2 SET $day=$value WHERE name='$name' AND yr='$year' AND mth='$month'";
+    $sql = "UPDATE $tableName SET $day='$rbValue', $memo='$memoValue' WHERE name='$name' AND yr='$year' AND mth='$month'";
     mysqli_query($conn,$sql);
 }
 
 
 
-//foreach ($_POST as $value){
+//foreach ($_POST as $rbValue){
 //    //Here we create a SQL statement that insert data into our database
-//    $value=(int)$value; //Convert string to integer value
+//    $rbValue=(int)$rbValue; //Convert string to integer value
 //    $day='day'.$x;
-//	$sql = "UPDATE timesheet2 SET $day=$value WHERE name='$name' AND yr='$year' AND mth='$month'";
+//	$sql = "UPDATE timesheet2 SET $day=$rbValue WHERE name='$name' AND yr='$year' AND mth='$month'";
 //    $x++;
 //
 //    //Here we "query" the data in the database

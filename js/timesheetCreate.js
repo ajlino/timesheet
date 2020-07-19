@@ -1,7 +1,7 @@
 
 
 $(document).ready(function(){
-
+	console.log("Hello boozoo");
 	var y;
 	var m;
 
@@ -17,6 +17,8 @@ $(document).ready(function(){
 
 
 
+		$("#year").val(y);
+		$("#month").val(m);
 
 		$("#timesheetPeriod").text(moment(new Date(y,m)).format("YYYY MMMM"));
 
