@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
   $("#createReport").submit(function(event){
-      console.log("Bozo");
+    console.log("Bozo");
     event.preventDefault();  //prevent default action (form submission to php)
     var post_url=$(this).attr("action");  //get from action url
     var request_method = $(this).attr("method"); //get form GET/POST method
@@ -34,7 +34,12 @@ $(document).ready(function(){
         html+="</tr>";
         // console.log(x);
         $("#data").append(html);
+
+        localStorage.setItem("results", jsonData);
+        $("#csvButton").prop("disabled", false);
       }
   	});
   });
+
+
 });
