@@ -1,14 +1,17 @@
 <?php
 
 
+
 include_once 'timesheetDBH.php';
+
+$tableName="timesheet3";
 
 $name=$_POST['name'];
 $year=$_POST['yr'];
 $month=$_POST['mth'];
 
 
-// $sql="SELECT name FROM timesheet2 WHERE name='$name' AND yr='$year' AND mth='$month'";
+// $sql="SELECT name FROM $tableName WHERE name='$name' AND yr='$year' AND mth='$month'";
 // $result=mysqli_query($conn, $sql);
 // echo mysqli_num_rows($result);
 // echo $name;
@@ -19,7 +22,7 @@ $month=$_POST['mth'];
 //     echo "No report exists for that name, date, year";
 // }
 // else{
-  $sql = "SELECT *FROM timesheet2 WHERE name='$name' AND yr='$year' AND mth='$month'";
+  $sql = "SELECT *FROM $tableName WHERE name='$name' AND yr='$year' AND mth='$month'";
   $result = mysqli_query($conn, $sql);
 
 
@@ -37,10 +40,10 @@ $month=$_POST['mth'];
     echo json_encode($data);
     }
  } else {
-   echo "0 results";
-   echo $name;
-   echo $year;
-   echo $month;
+   echo json_encode("0results");
+   // echo $name;
+   // echo $year;
+   // echo $month;
  }
 
  mysqli_close($conn);
