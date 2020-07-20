@@ -13,29 +13,44 @@ $(document).ready(function(){
       type: request_method,
       data : form_data
     }).done(function(response){ //
-  		// $("#server-results").html(response);  //innerHTML for div id server-results
-      var jsonData = JSON.parse(response);
-      console.log(jsonData);  //for debugging
-      if (jsonData=="0results"){
-        alert("No results");
-      }
-      else{
-      //Add jsonData to the table
-        var html="";
-        var x=0;
-        html+="<tr>";
+        var jsonData = JSON.parse(response);
+        console.log(jsonData);  //for debugging
 
-        jsonData.forEach(myFunction);
-
-        function myFunction(item, index){
-          html+="<td>" + item + "</td>";
-          x++;
+        if (jsonData=="0results"){
+          alert("No results");
         }
-        html+="</tr>";
-        // console.log(x);
-        $("#data").append(html);
+        else{
+          var html="";
+          var headers="";
+          var lineEnd=","
+          jsonData.forEach(myFunction);
 
-        localStorage.setItem("results", jsonData);
+          function myFunction(item, index){
+
+            if (item=='End-Of-Row'){
+              html+="\n"; //if end
+            } else{
+            html+=item+",";
+            }
+          }
+           $("#data").append(html);
+
+
+        // var html="";
+        // var x=0;
+        // html+="<tr>";
+        //
+        // jsonData.forEach(myFunction);
+        //
+        // function myFunction(item, index){
+        //   html+="<td>" + item + "</td>";
+        //   x++;
+        // }
+        // html+="</tr>";
+        // // console.log(x);
+        // $("#data").append(html);
+
+        localStorage.setItem("results", html);
         $("#csvButton").prop("disabled", false);
       }
   	});
