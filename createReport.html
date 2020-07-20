@@ -14,10 +14,8 @@
 
 <link href="css/coolRadio.css" rel="stylesheet" type="text/css">
 <script src="js/moment.js"></script>
-<script src="js/timesheetCreate.js"></script>
-<script src="js/rbToggle.js"></script>
-<script src="js/getDateforNewSheet.js"></script>
 <script src="js/createReport.js"></script>
+<script src="js\createCSV.js"></script>
 
 
 
@@ -33,13 +31,13 @@
 <nav class="navbar navbar-default">
   <div class="container">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">WebSiteName</a>
+      <a class="navbar-brand" href="#">A.W.E.S.O.M.-O 4000</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="index.html">Timesheet</a></li>
-      <li><a href="createReport.html">Create Report 2</a></li>
-      <li><a href="#">Page 3</a></li>
+      <li class="active"><a href="index.html">Current</a></li>
+      <li><a href="#">New</a></li>
+      <li><a href="createReport.html">Report</a></li>
+      <li><a href="index.html">Link3</a></li>
     </ul>
   </div>
 </nav>
@@ -47,25 +45,26 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-4 options">
+    <div class="col-sm-12 options">
       <form class="form" action="php/createReport.php" method="post" id="createReport">
         <h3>Create Report</h3>
         <select name="name">
+            <option value="all">All</option>
             <option value="Andy">Andy</option>
             <option value="Bill">Bill</option>
             <option value="Carol">Carol</option>
             <option value="Dick">Dick</option>
         </select>
         <select name="mth" id="mth">
-            <option value="01">January</option>
-            <option value="02">February</option>
-            <option value="03">March</option>
-            <option value="04">April</option>
-            <option value="05">May</option>
-            <option value="06">June</option>
-            <option value="07">July</option>
-            <option value="08">August</option>
-            <option value="09">September</option>
+            <option value="1">January</option>
+            <option value="2">February</option>
+            <option value="3">March</option>
+            <option value="4">April</option>
+            <option value="5">May</option>
+            <option value="6">June</option>
+            <option value="7">July</option>
+            <option value="8">August</option>
+            <option value="9">September</option>
             <option value="10">October</option>
             <option value="11">November</option>
             <option value="12">December</option>
@@ -84,22 +83,24 @@
             <option value="2020" selected>2020</option>
         </select>
         <input type="Submit" id="submit">
+        <button type="button" id="csvButton" disabled>Create CSV file</button>
       </form>
     </div>
-
-    <div class="col-sm-8 report">
+  </div>
+  <div class="row">
+    <div class="col-sm-12 report">
       <table>
         <tr>
         <th>Name</th>
         <th>Year</th>
         <th>Month</th>
         </tr>
-
+    </div>
         <tbody id="data"></tbody>
       </table>
 
 
-      <div id="server-results"> AJAX Response Goes Here</div>
+      <!-- <div id="server-results"> AJAX Response Goes Here</div> -->
     </div>
-  </div>
+
 </div>
