@@ -1,5 +1,10 @@
 /* CSS Document */
 
+.jumbotron{
+  text-align: center;
+}
+
+
 /* The sidebar menu */
 .sidenav {
   height: 100%; /* Full-height: remove this if you want "auto" height */
