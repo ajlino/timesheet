@@ -16,15 +16,17 @@ $(document).ready(function(){
 
 
 
-
+		$("#tsHeader").text(m+" "+y);
+		$("#mth").val(m);
+		$("#yr").val(y);
 		$("#year").val(y);
-		$("#month").val(m);
+		$("#month").val(m-1);
 
 		// $("#timesheetPeriod").text(moment(new Date(y,m)).format("YYYY MMMM"));
 
 		// var y=$("#yr").val();
 		// var m=$("#mth").val();
-		var momentOrigin=moment(new Date(y, m, 1));
+		var momentOrigin=moment(new Date(y, m-1, 1));
 		var lastDay=momentOrigin.clone().endOf("month");	//calculates the last day of the given month
 
 

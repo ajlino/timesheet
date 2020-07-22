@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+
+
+<link href="css/coolRadio.css" rel="stylesheet" type="text/css">
+<script src="js/moment.js"></script>
+<script src="js/timesheetCreate.js"></script>
+<script src="js/rbToggle.js"></script>
+<script src="js/getDateforNewSheet.js"></script>
+<script src="js/createReport.js"></script>
+<script src="js\timeSheetSubmitAjax.js"></script>
+
+
+
+</head>
+
+<body>
+
+
+
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">A.W.E.S.O.M.-O 4000</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="index.html">Home</a></li>
+        <li><a href="createTimesheet.html">New</a></li>
+        <li><a href="createReport.html">Report</a></li>
+        <li><a href="#">Link3</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Side navigation -->
+<div class="sidenav">
+  <a href="index.html">Home</a>
+  <a href="createTimesheet.html">New</a>
+  <a href="createReport.html">Report</a>
+  <a href="#">Link3</a>
+</div>
+
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-sm-12 shifts">
+        <!-- <h3 id="timesheetPeriod">"Timesheet"</h3> -->
+        <form class="form" action="php/timesheet.php" method="post" id="submitTimesheet">
+          <div class="timesheetHeader">
+            <select name="name">
+                <option value="Andy">Andy</option>
+                <option value="Bill">Bill</option>
+                <option value="Carol">Carol</option>
+                <option value="Dick">Dick</option>
+            </select>
+            <input type="text" name="yr" id="year">
+            <input type="text" name="mth" id="month">
+          </div>
+          <div id="selectionDiv"></div>
+          <div id="submitButton">
+              <input  type="Submit">
+          </div>
+          <div id="tallyDisplay">
+              <p id="totalHours" class="tally">Total Hours</p>
+          </div>
+        </form>
+    </div>
+  </div>
+</div>
+
+<footer class="page-footer">
+  <h1>This is FOOTER content</h1>
+  <h1>This is FOOTER content</h1>
+  <h1>This is FOOTER content</h1>
+  <h1>This is FOOTER content</h1>
+
+</body>
+</html>

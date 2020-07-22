@@ -4,20 +4,12 @@ $tableName="timesheet3";
 
 include_once 'timesheetDBH.php';
 
-//$sql="UPDATE timesheet2 SET day3='3' WHERE name='Andy'";
-
-$x=0;
 $name=$_POST['name'];
 $year=$_POST['yr'];
 $month=$_POST['mth'];
 
-
-
-//$sql="SELECT name FROM timesheet2 WHERE name='$name', yr='$year', mth='$month'";
-
 $sql="SELECT name FROM $tableName WHERE name='$name' AND yr='$year' AND mth='$month'";
 $result=mysqli_query($conn, $sql);
-echo mysqli_num_rows($result);
 
 if (mysqli_num_rows($result)>0){
     $x=0;
@@ -34,15 +26,17 @@ else{
 
 
 
+
 for ($i=1; $i<32; $i++){
     $day='day'.$i;
     $rb="radioButton_Day".$i;
     $memo="memoDay".$i;
-    $rbValue=$_POST[$rb];
-    $memoValue=$_POST[$memo];
-
-    if (is_null($rbValue)){
-        $rbValue=0;
+    if (isset($_POST[$rb])){
+      $rbValue=$_POST[$rb];
+      $memoValue=$_POST[$memo];
+    } else {
+      $rbValue=null;
+      $memoValue=null;
     }
 
     $sql = "UPDATE $tableName SET $day='$rbValue', $memo='$memoValue' WHERE name='$name' AND yr='$year' AND mth='$month'";
