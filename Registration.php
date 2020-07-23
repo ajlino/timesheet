@@ -99,12 +99,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <meta charset="UTF-8">
     <title>Sign Up</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/coolRadio.css">
     <style type="text/css">
         body{ font: 14px sans-serif; }
-        .wrapper{ width: 350px; padding: 20px; }
+        .wrapper{ width: 350px; padding: 20px; margin: auto; }
     </style>
 </head>
 <body>
+
+  <div class="jumbotron">
+    <div class="jumboDiv">
+      <h1>A.W.E.S.O.M.-0 4000</h1>
+      <p>Timesheet Robot</p>
+    </div>
+  </div>
+
     <div class="wrapper">
         <h2>Sign Up</h2>
         <p>Please fill this form to create an account.</p>
