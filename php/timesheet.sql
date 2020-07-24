@@ -97,8 +97,7 @@ memoDay30 varchar(256) ,
 
 memoDay31 varchar(256) ,
 
-
-PRIMARY KEY(id)
+PRIMARY KEY(id, yr, mth)
 
 
 );
