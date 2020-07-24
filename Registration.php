@@ -3,8 +3,8 @@
 require_once "php/timesheetDBH.php";
 
 // Define variables and initialize with empty values
-$username = $email = $password = $confirm_password = "";
-$username_err = $email_err = $password_err = $confirm_password_err = "";
+$username = $firstName = $lastName = $email = $password = $confirm_password = "";
+$username_err = $firstName_err = $lastName_err = $email_err = $password_err = $confirm_password_err = "";
 
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -53,6 +53,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       }
     }
 
+    //validate first name
+    if(empty(trim($_POST["firstName"]))){
+        $firstName_err = "Please enter your first name.";
+    } else{
+        $firstName = trim($_POST["firstName"]);
+    }
+
+    //validate last name
+    if(empty(trim($_POST["lastName"]))){
+        $lastName_err = "Please enter your last name.";
+    } else{
+        $lastName = trim($_POST["lastName"]);
+    }
 
     // Validate password
     if(empty(trim($_POST["password"]))){
@@ -135,6 +148,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <label>Username</label>
                 <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
                 <span class="help-block"><?php echo $username_err; ?></span>
+            </div>
+
+            <div class="form-group <?php echo (!empty($firstName_err)) ? 'has-error' : ''; ?>">
+                <label>First Name</label>
+                <input type="text" name="firstName" class="form-control" value="<?php echo $firstName; ?>">
+                <span class="help-block"><?php echo $firstName_err; ?></span>
+            </div>
+
+            <div class="form-group <?php echo (!empty($lastName_err)) ? 'has-error' : ''; ?>">
+                <label>Last Name</label>
+                <input type="text" name="lastName" class="form-control" value="<?php echo $lastName; ?>">
+                <span class="help-block"><?php echo $lastName_err; ?></span>
             </div>
 
             <div class="form-group <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">

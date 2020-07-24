@@ -107,7 +107,7 @@
           <div id="tallyDisplay">
               <p id="totalHours" class="tally">Total Hours</p>
           </div>
-        </form>
+  </form>
 
     </div>
   </div>
