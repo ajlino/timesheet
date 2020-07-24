@@ -1,7 +1,8 @@
 
 
 $(document).ready(function(){
-	console.log("Hello boozoo");
+
+
 	var y;
 	var m;
 

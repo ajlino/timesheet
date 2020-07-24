@@ -23,16 +23,16 @@
 
 <body>
 
-
   <nav class="navbar navbar-default">
     <div class="container">
       <div class="navbar-header">
         <a class="navbar-brand" href="#">A.W.E.S.O.M.-O 4000</a>
       </div>
       <ul class="nav navbar-nav">
-        <li class="active"><a href="index.html">Home</a></li>
-        <li><a href="createReport.html">Report</a></li>
-        <li><a href="#">Link3</a></li>
+        <li class="active"><a href="index.php">Home</a></li>
+        <li><a href="createReport.php">Report</a></li>
+        <li><a href="Registration.php">Registration</a></li>
+        <li><a href="logout.php">Logout</a></li>
       </ul>
     </div>
   </nav>

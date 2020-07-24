@@ -4,6 +4,9 @@
   text-align: center;
 }
 
+.timesheetHeader{
+  display: inline;
+}
 
 /* The sidebar menu */
 .sidenav {

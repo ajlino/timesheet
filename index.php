@@ -1,3 +1,7 @@
+??<?php
+  session_start();
+?>
+
 <!doctype html>
 <html>
 <head>
@@ -32,8 +36,8 @@
         <a class="navbar-brand" href="#">A.W.E.S.O.M.-O 4000</a>
       </div>
       <ul class="nav navbar-nav">
-        <li class="active"><a href="index.html">Home</a></li>
-        <li><a href="createReport.html">Report</a></li>
+        <li class="active"><a href="index.php">Home</a></li>
+        <li><a href="createReport.php">Report</a></li>
         <li><a href="Registration.php">Registration</a></li>
         <li><a href="logout.php">Logout</a></li>
       </ul>
@@ -87,7 +91,11 @@
     </div>
 
     <div class="col-sm-8 shifts">
-        <h3 id="tsHeader"></h3>
+      <div >
+        <h3 class="timesheetHeader" id="tsHeader"></h3>
+        <h3 class="timesheetHeader"><?php echo $_SESSION["username"]; ?></h3>
+      </div>
+
 
 
 
