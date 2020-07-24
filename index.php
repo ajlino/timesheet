@@ -1,4 +1,4 @@
-??<?php
+<?php
   session_start();
 ?>
 
@@ -93,7 +93,7 @@
     <div class="col-sm-8 shifts">
       <div >
         <h3 class="timesheetHeader" id="tsHeader"></h3>
-        <h3 class="timesheetHeader"><?php echo $_SESSION["username"]; ?></h3>
+        <h3 class="timesheetHeader"><?php echo $_SESSION["firstName"]." ".$_SESSION["lastName"]; ?></h3>
       </div>
 
 
