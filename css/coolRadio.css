@@ -4,36 +4,62 @@
   text-align: center;
 }
 
+.container{
+  border-radius: 20px;
+}
+
+
+
+
+.timeSheetLeft{
+  text-align: center;
+  background: rgb(0,78,140);
+  background: linear-gradient(180deg, rgba(0,78,140,1) 0%, rgba(0,119,218,1) 46%, rgba(0,206,255,1) 100%);}
+
+.timeSheetLeft #submitButton{
+    text-align: center;
+    margin-top: 40px;
+}
+
+.timeSheetLeft h3{
+    color: LightGray;
+}
+
+.timeSheetRight{
+  background: rgb(247,247,247);
+  /* background: linear-gradient(180deg, rgba(218,218,218,1) 0%, rgba(206,233,255,1) 46%, rgba(232,243,255,1) 100%); */
+}
+
 .timesheetHeader{
   display: inline;
+  text-align: center;
 }
 
-/* The sidebar menu */
-.sidenav {
-  height: 100%; /* Full-height: remove this if you want "auto" height */
-  width: 160px; /* Set the width of the sidebar */
-  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
-  left: 0;
-  background-color: #111; /* Black */
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 20px;
+.timesheetIdentity .result{
+  display: inline-block;
+  background-color: white;
+  color: black;
+  border-radius: 40px;
+  padding-left:20px;
+  padding-right:20px;
+  margin-top: 0px;
+  width: auto;
 }
 
-/* The navigation menu links */
-.sidenav a {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
+.timesheetStats{
+  text-align: center;
 }
 
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-  color: #f1f1f1;
+.timesheetStats .result{
+  display: inline-block;
+  background-color: white;
+  color: black;
+  border-radius: 40px;
+  width: 100px;
+  margin-top: 0;
+
 }
+
 
 /* Style page content */
 .main {
@@ -41,33 +67,6 @@
   padding: 0px 10px;
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-
-
-.vertical-menu {
-  width: 200px;
-}
-
-.vertical-menu a {
-  background-color: #eee;
-  color: black;
-  display: block;
-  padding: 12px;
-  text-decoration: none;
-}
-
-.vertical-menu a:hover {
-  background-color: #ccc;
-}
-
-.vertical-menu a.active {
-  background-color: #4CAF50;
-  color: white;
-}
 
 .memoText{
   /* display: inline-block;
@@ -94,18 +93,6 @@
 background-color: LightGray;
 text-align: center;
 ;
-}
-
-.shifts{
-  background-color: rgba(161, 161, 161, 0.19);
-}
-
-.options{
-  background-color: navy;
-}
-
-.options h3{
-    color: LightGray;
 }
 
 .report {

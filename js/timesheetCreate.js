@@ -17,7 +17,7 @@ $(document).ready(function(){
 
 
 
-		$("#tsHeader").text(m+" "+y);
+		$("#tsPayPeriod").text(m+" "+y);
 		$("#mth").val(m);
 		$("#yr").val(y);
 		$("#year").val(y);
@@ -29,7 +29,7 @@ $(document).ready(function(){
 		// var m=$("#mth").val();
 		var momentOrigin=moment(new Date(y, m-1, 1));
 		var lastDay=momentOrigin.clone().endOf("month");	//calculates the last day of the given month
-
+		$("#tsPayPeriod").text(momentOrigin.format("MMMM")+" "+y);
 
 		var momentClone=momentOrigin.clone();
 

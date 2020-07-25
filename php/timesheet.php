@@ -12,6 +12,9 @@ $month = $_POST['mth'];
 $firstName = $_SESSION['firstName'];
 $lastName = $_SESSION['lastName'];
 
+$_SESSION['year'] = $year;
+$_SESSION['month'] = $month;
+
 $sql="SELECT * FROM $tableName WHERE id='$id' AND yr='$year' AND mth='$month'";
 $result=mysqli_query($conn, $sql);
 
