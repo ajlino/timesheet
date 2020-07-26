@@ -1,4 +1,4 @@
-$(document).ready(function(){	
+$(document).ready(function(){
 
 
 	//Add functionality to toggle radiobuttons OFF
@@ -30,4 +30,8 @@ $(document).ready(function(){
         });
         $("#totalHours").text(total);
     });
+
+
+
+
 });
