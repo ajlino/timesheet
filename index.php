@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <!doctype html>
 <html>
 <head>
@@ -32,10 +36,10 @@
         <a class="navbar-brand" href="#">A.W.E.S.O.M.-O 4000</a>
       </div>
       <ul class="nav navbar-nav">
-        <li class="active"><a href="index.html">Home</a></li>
-        <li><a href="createTimesheet.html">New</a></li>
-        <li><a href="createReport.html">Report</a></li>
-        <li><a href="#">Link3</a></li>
+        <li class="active"><a href="index.php">Home</a></li>
+        <li><a href="createReport.php">Report</a></li>
+        <li><a href="Registration.php">Registration</a></li>
+        <li><a href="logout.php">Logout</a></li>
       </ul>
     </div>
   </nav>
@@ -45,15 +49,10 @@
   <form class="form" action="php/timesheet.php" method="post" id="submitTimesheet">
   <div class="row">
 
-    <div class="col-sm-4 options">
+    <!-- Left Hand Column -->
+    <div class="col-sm-4 timeSheetLeft ">
       <h3>Choose Pay Period</h3>
-      <select name="name">
-          <option value="Andy">Andy</option>
-          <option value="Bill">Bill</option>
-          <option value="Carol">Carol</option>
-          <option value="Dick">Dick</option>
-      </select>
-      <select name="mth" id="mth">
+      <select class="form-control" name="mth" id="mth">
           <option value="1">January</option>
           <option value="2">February</option>
           <option value="3">March</option>
@@ -67,7 +66,7 @@
           <option value="11">November</option>
           <option value="12">December</option>
       </select>
-      <select name="yr" id="yr">
+      <select class="form-control" name="yr" id="yr">
           <option value="2030">2030</option>
           <option value="2029">2029</option>
           <option value="2028">2028</option>
@@ -80,26 +79,33 @@
           <option value="2021">2021</option>
           <option value="2020" selected>2020</option>
       </select>
-      <button type="button" id="create">Create</button>
+      <button class="btn btn-default" type="button" id="create">Create New Blank Timesheet</button>
       <br>
+      <div class = "timesheetIdentity">
+        <h3>Name</h3>
+        <h3 class="result"><?php echo $_SESSION["firstName"]." ".$_SESSION["lastName"]; ?></h3>
+        <h3>Pay Period</h3>
+        <h3 class="result" id="tsPayPeriod"></h3>
 
-      </form> -->
+      </div>
+      <div id="tallyDisplay" class="timesheetStats">
+          <h3>Total Hours</h3>
+          <h3 id="totalHours" class="result">0</h3>
+          <h3>Total Shifts</h3>
+          <h3 id="totalShifts" class="result">0</h3>
+      </div>
+      <div id="submitButton">
+          <input type="Submit" class="btn" id="submitButton">
+      </div>
     </div>
 
-    <div class="col-sm-8 shifts">
-        <h3 id="tsHeader"></h3>
+    <!-- Right hand column -->
+    <div class="col-sm-8  timeSheetRight">
 
+          <div id="selectionDiv"></div>
+    </div>
 
-
-          <div id="selectionDiv">
-          </div>
-          <div id="submitButton">
-              <input type="Submit">
-          </div>
-          <div id="tallyDisplay">
-              <p id="totalHours" class="tally">Total Hours</p>
-          </div>
-        </form>
+  </form>
 
     </div>
   </div>

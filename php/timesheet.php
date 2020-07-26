@@ -1,21 +1,28 @@
 <?php
 
+session_start();
+
 $tableName="timesheet3";
 
 include_once 'timesheetDBH.php';
 
-$name=$_POST['name'];
-$year=$_POST['yr'];
-$month=$_POST['mth'];
+$id = $_SESSION['id'];
+$year = $_POST['yr'];
+$month = $_POST['mth'];
+$firstName = $_SESSION['firstName'];
+$lastName = $_SESSION['lastName'];
 
-$sql="SELECT name FROM $tableName WHERE name='$name' AND yr='$year' AND mth='$month'";
+$_SESSION['year'] = $year;
+$_SESSION['month'] = $month;
+
+$sql="SELECT * FROM $tableName WHERE id='$id' AND yr='$year' AND mth='$month'";
 $result=mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result)>0){
     $x=0;
 }
 else{
-    $sql = "INSERT INTO $tableName (name, yr, mth) VALUES ('$name', '$year', '$month')";
+    $sql = "INSERT INTO $tableName (id, firstName, lastName, yr, mth) VALUES ('$id', '$firstName', '$lastName', '$year', '$month')";
         if (mysqli_query($conn, $sql)) {
             echo "New record created successfully";
         } else {
@@ -39,7 +46,7 @@ for ($i=1; $i<32; $i++){
       $memoValue=null;
     }
 
-    $sql = "UPDATE $tableName SET $day='$rbValue', $memo='$memoValue' WHERE name='$name' AND yr='$year' AND mth='$month'";
+    $sql = "UPDATE $tableName SET $day='$rbValue', $memo='$memoValue' WHERE id='$id' AND yr='$year' AND mth='$month'";
     mysqli_query($conn,$sql);
 }
 
@@ -61,7 +68,6 @@ for ($i=1; $i<32; $i++){
 //
 if ($conn->query($sql) === TRUE) {
   echo "Record updated successfully";
-  echo $name;
 } else {
   echo "Error updating record: " . $conn->error;
 }
